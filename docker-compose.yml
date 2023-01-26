@@ -2,11 +2,12 @@ version: '3'
 services:
   mongodb:
     image: mongo
+    container_name: mongo
     environment:
       - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
       - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
     ports:
-      - 27017:27017
+      - 27000:27000
 
   app:
     build: ./src
