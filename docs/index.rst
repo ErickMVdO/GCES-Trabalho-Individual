@@ -8,8 +8,10 @@ Welcome to gces-Sphinx's documentation!
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Extensions
 
+
+/xml
 
 
 Indices and tables
