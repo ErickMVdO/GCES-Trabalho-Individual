@@ -70,5 +70,6 @@ jobs:
         poetry install
         poetry build
         poetry config pypi-token.pypi ${{ env.PYPI_TOKEN }}
+        poetry version patch
         poetry publish
     
