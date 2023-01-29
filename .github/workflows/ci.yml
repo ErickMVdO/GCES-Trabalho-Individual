@@ -54,5 +54,6 @@ jobs:
 
     - name: Build Sphinx documentation
       run: |
+        pip install Sphinx
         cd docs
         make html
