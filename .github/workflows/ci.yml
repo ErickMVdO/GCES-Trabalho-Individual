@@ -37,10 +37,12 @@ jobs:
     - name: Check if the containers are running
       run: |
         docker-compose ps
+        docker-compose up -d
         if [ $? -ne 0 ]; then exit 1; fi
 
     - name: Check poetry build
       run: |
+        cd gces-poetry
         poetry build
 
     - name: Run tests
