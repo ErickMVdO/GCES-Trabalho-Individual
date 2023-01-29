@@ -58,3 +58,13 @@ jobs:
         pip install breathe
         cd docs
         make html
+  
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Deploy
+      run: |
+        cd gces-poetry
+        poetry publish
+    
