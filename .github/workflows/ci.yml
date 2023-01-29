@@ -24,12 +24,6 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Install dependencies of poetry
-      run: |
-        cd gces-poetry
-        pip install poetry
-        poetry install
-
     - name: Check Docker Compose
       run: |
         docker-compose config
@@ -39,11 +33,6 @@ jobs:
         docker-compose up -d
         docker-compose ps
         if [ $? -ne 0 ]; then exit 1; fi
-
-    - name: Check poetry build
-      run: |
-        cd gces-poetry
-        poetry build
 
     - name: Run tests
       run: |
@@ -77,7 +66,5 @@ jobs:
         pip install poetry
         poetry install
         poetry build
-        poetry publish --username __token__ --password $PYPI_TOKEN
-      env:
-        PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
+        poetry publish --username __token__ --password ${{ secrets.PYPI_TOKEN }}
     
