@@ -55,5 +55,6 @@ jobs:
     - name: Build Sphinx documentation
       run: |
         pip install Sphinx
+        pip install breathe
         cd docs
         make html
