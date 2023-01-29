@@ -47,8 +47,10 @@ jobs:
 
     - name: Run tests
       run: |
-        pytest /tests/parser
-        pytest /tests/data_pipeline/feature_engineering
+        cd tests/parser
+        pytest
+        cd ../data_pipeline/feature_engineering
+        pytest
 
     - name: Build Sphinx documentation
       run: |
