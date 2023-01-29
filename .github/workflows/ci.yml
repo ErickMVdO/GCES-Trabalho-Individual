@@ -68,8 +68,8 @@ jobs:
         cd gces-poetry
         pip install poetry
         poetry install
+        poetry version patch
         poetry build
         poetry config pypi-token.pypi ${{ env.PYPI_TOKEN }}
-        poetry version patch
         poetry publish
     
