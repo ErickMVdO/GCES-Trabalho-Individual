@@ -36,8 +36,8 @@ jobs:
 
     - name: Check if the containers are running
       run: |
-        docker-compose ps
         docker-compose up -d
+        docker-compose ps
         if [ $? -ne 0 ]; then exit 1; fi
 
     - name: Check poetry build
