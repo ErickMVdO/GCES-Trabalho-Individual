@@ -70,9 +70,12 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: 3.8
-        
+
     - name: Deploy
       run: |
         cd gces-poetry
+        pip install poetry
+        poetry install
+        poetry build
         poetry publish
     
