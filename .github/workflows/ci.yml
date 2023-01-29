@@ -26,6 +26,7 @@ jobs:
 
     - name: Install dependencies of poetry
       run: |
+        cd gces-poetry
         pip install poetry
         poetry install
 
@@ -51,4 +52,3 @@ jobs:
       run: |
         cd docs
         make html
-        
